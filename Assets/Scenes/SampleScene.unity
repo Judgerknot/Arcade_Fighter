@@ -1149,7 +1149,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1203,7 +1203,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1245,4 +1245,16 @@ MonoBehaviour:
   - {fileID: 7562585220333629560, guid: fd1d2ec86fd8219498385ef471bc9136, type: 3}
   - {fileID: 4460314057616454288, guid: a848e1b84a6e14a48b021f36a2cf1a26, type: 3}
   currentCharacter: {fileID: 0}
-  col: {fileID: 0}
+  col: {fileID: 2022838167}
+  playerInput: {fileID: 2022838175}
+--- !u!114 &2022838175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2005928072786702607, guid: 87b780db1875aec42a9d0d3b6f7d89ed, type: 3}
+  m_PrefabInstance: {fileID: 971177196}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971424428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
