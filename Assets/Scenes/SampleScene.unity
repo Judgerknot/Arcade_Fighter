@@ -1243,7 +1243,7 @@ MonoBehaviour:
   cClass: 0
   Characters:
   - {fileID: 7562585220333629560, guid: fd1d2ec86fd8219498385ef471bc9136, type: 3}
-  - {fileID: 4460314057616454288, guid: a848e1b84a6e14a48b021f36a2cf1a26, type: 3}
+  - {fileID: 7094228509682091011, guid: 3b0e9b43066ec804380d55ed66324c3b, type: 3}
   currentCharacter: {fileID: 0}
   col: {fileID: 2022838167}
   playerInput: {fileID: 2022838175}
