@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    public List<GameObject> Prefabs;
+    public GameObject PlayerPrefab;
 
     public List<GameObject> Players;
     public int MaxPlayers = 2;
@@ -29,14 +29,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (Players.Count < MaxPlayers && context.started)
         {
-            GameObject player = Instantiate(Prefabs[1], Vector2.zero, Quaternion.identity);
+            GameObject player = Instantiate(PlayerPrefab, Vector2.zero, Quaternion.identity);
             Players.Add(player);
         }
-
-        
-        
-
-        
     }
 }
 

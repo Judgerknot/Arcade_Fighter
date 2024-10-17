@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float MoveSpeed = 10f;
     private Vector2 moveVelocity;
 
-    public float JumpForce = 15f;
+    public float JumpForce;// = 15f;
     public bool isGrounded;
     public Rigidbody2D RB;
     public Transform GroundCheckPoint;
@@ -48,24 +48,40 @@ public class Player : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapBox(GroundCheckPoint.position, Vector2.one * 0.5f, 0f, GroundLayer);
 
-        RB.velocity = new Vector2(moveVelocity.x * MoveSpeed, RB.velocity.y); //TODO:Fix ghost  up/down movement, assigning y velocity to itself, value not coming from player input
+        if (cClass == CharacterClass.Ghost)
+        {
+            RB.velocity = new Vector2(moveVelocity.x * MoveSpeed, moveVelocity.y * MoveSpeed); //TODO:Fix ghost  up/down movement. System only reading one direction at a time, cans move diagonal.
+        }
+        else
+        {
+            RB.velocity = new Vector2(moveVelocity.x * MoveSpeed, RB.velocity.y);
+        }          
     }
 
     //Get left/right input from the input actions
     public void Move(InputAction.CallbackContext context)        
     {
-        moveVelocity = context.ReadValue<Vector2>();
-        //moveVelocity = context.ReadValue<Vector2>().x;
+        if (context.started)
+        {
+            moveVelocity = context.ReadValue<Vector2>();
+        }
+
+        if (context.canceled)
+        {
+            moveVelocity = Vector2.zero;
+        }
     }
 
     //get the jump input and apply to the rigidbody
     public void Jump(InputAction.CallbackContext context)
-    {
-        if (RB != null && isGrounded) 
-        {
+    {        
+        if (RB != null && isGrounded && context.started)
+        {                        
             RB.velocity += Vector2.up * JumpForce;
-        }
-        
+
+            Debug.Log(JumpForce);
+            Debug.Log(RB.velocity.y);
+        }        
     }
     //used when a player is hit and takes damage. 
     public void TakeHit(int dmg)
@@ -79,7 +95,10 @@ public class Player : MonoBehaviour
         }
     }
     
-    
+    public void Respawn()
+    {
+        Spawn();
+    }
     //Spawns the charcter 
     void Spawn()
     {
@@ -91,6 +110,8 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Player Dies)");
         cClass = CharacterClass.Ghost;
+        RB.velocity = Vector2.zero;
+        moveVelocity = Vector2.zero;    
         CharacterSwap();
     }
 
@@ -150,7 +171,7 @@ public class Player : MonoBehaviour
         col.isTrigger = false;// enable collisions
         playerInput.SwitchCurrentActionMap("Base"); // change action map?
         MoveSpeed = 10f;// move speed = 10
-        JumpForce = 15f;
+        JumpForce = 25f;
         // trigger spawn animation
     }
 

@@ -164,7 +164,7 @@
             ],
             "bindings": [
                 {
-                    "name": "MoveUDKeyboard",
+                    "name": "WASDKeyboard",
                     "id": "8b10438b-fc63-4248-9b52-d1996a5ce52a",
                     "path": "Dpad",
                     "interactions": "",
@@ -197,39 +197,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
-                    "id": "f104d114-d3e7-46c5-9fa8-71277d03227e",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "0ce65840-b593-49f3-8e24-4c678199bb18",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "MoveLRKeyboard",
-                    "id": "bb59bbd0-616f-4e68-87f1-62a9157b3553",
-                    "path": "Dpad",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "left",
                     "id": "575ec04e-ef73-457b-a3b8-885dfd6355b3",
                     "path": "<Keyboard>/a",
@@ -244,6 +211,28 @@
                     "name": "left",
                     "id": "4d8537d4-5a13-4300-b725-fa409322097e",
                     "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "f104d114-d3e7-46c5-9fa8-71277d03227e",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "0ce65840-b593-49f3-8e24-4c678199bb18",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -274,7 +263,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "MoveUDGamepad",
+                    "name": "MoveGamepad",
                     "id": "51fa0419-462c-4408-982e-c74a29e143bf",
                     "path": "2DVector",
                     "interactions": "",
@@ -305,17 +294,6 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "MoveLRGamepad",
-                    "id": "872d4195-ff51-4325-bc90-bcb74ba127a4",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": true,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "left",
