@@ -9,7 +9,7 @@ public class DeathVolume : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             Debug.Log("Player Enter");
-            collision.gameObject.GetComponent<Player>().TakeHit(1);
+            collision.gameObject.GetComponent<HealthTracker>().TakeDamage(1);
         }
     }
 }

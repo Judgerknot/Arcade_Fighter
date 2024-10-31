@@ -83,7 +83,12 @@ public class Player : MonoBehaviour
             Debug.Log(RB.velocity.y);
         }        
     }
-    //used when a player is hit and takes damage. 
+    
+    
+    /******************************
+     * Moved to HealthTracker******
+     * ****************************
+     * //used when a player is hit and takes damage. 
     public void TakeHit(int dmg)
     {
         Health -= dmg;
@@ -91,22 +96,12 @@ public class Player : MonoBehaviour
         //check if player has died
         if (Health <= 0)
         {
-            Die();
+            CharacterDies();
         }
-    }
-    
-    public void Respawn()
-    {
-        Spawn();
-    }
-    //Spawns the charcter 
-    void Spawn()
-    {
-        cClass = CharacterClass.Base;
-        CharacterSwap();
-    }
+    } */   
+ 
     //Transforms the character into a ghost
-    void Die()
+    public void CharacterDies()
     {
         Debug.Log("Player Dies)");
         cClass = CharacterClass.Ghost;
@@ -115,6 +110,17 @@ public class Player : MonoBehaviour
         CharacterSwap();
     }
 
+    public void Respawn()
+    {
+        Spawn();
+    }
+
+    //Spawns the charcter 
+    void Spawn()
+    {
+        cClass = CharacterClass.Base;
+        CharacterSwap();
+    }
     //Upgrades the character
     void Upgrade()
     {
@@ -173,6 +179,7 @@ public class Player : MonoBehaviour
         MoveSpeed = 10f;// move speed = 10
         JumpForce = 25f;
         // trigger spawn animation
+        GetComponent<HealthTracker>().ResetHealth();
     }
 
 
